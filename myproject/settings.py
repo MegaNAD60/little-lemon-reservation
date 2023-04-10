@@ -56,7 +56,7 @@ ROOT_URLCONF = 'myproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['myapp/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -78,14 +78,16 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'littlelemon',
+        'NAME': 'reservation',
         'HOST':'127.0.0.1',
-        'USER':'root',
-        'PASSWORD':'@Nehemiah0000',
+        'USER':'admindjango',
+        'PASSWORD':'employee@123!',
         'PORT':''
     }
 }
 
+# The settings for media files have been updated for the Graded assessment
+MEDIA_URL = '/media/'
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -121,7 +123,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = 'myapp/static/'
+
+STATICFILES_DIRS = [
+    "myapp/static",
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
